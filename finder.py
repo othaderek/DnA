@@ -1,5 +1,8 @@
 # Find return the element in arr2 not in arr1
 # my solution
+
+import pdb
+
 def finder(arr1, arr2):
     frequencyCounter = {}
 
@@ -29,6 +32,7 @@ def finder1(arr1, arr2):
     for num in arr1+arr2:
         result^=num
         # print(result)
+        pdb.set_trace()
 
     return result
 
