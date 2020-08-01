@@ -1,3 +1,5 @@
+import pdb
+
 class Node(object):
 
     def __init__(self, value, nextNode=None):
@@ -6,12 +8,30 @@ class Node(object):
 
     def __repr__(self):
         return f'value: {self.value}, next: {self.nextNode}'
+
+class SingleyLinkedList(object):
+    
+    def __init__(self, head=None, tail=None, length=0):
+        self.head = head
+        self.tail = tail
+        self.length = length
+
+    def add_node(self,object):
+        node = Node(value=object)
+
+        if self.head == None:
+            self.head = node
+            self.tail = node
+        else:
+            self.tail.nextNode = node
+            self.tail = node
+        
+        self.length+=1
+        return self
+
+
     
 
-n1 = Node(value=1)
-n2 = Node(value=2)
-n3 = Node(value=3)
-n1.nextNode = n2
-n2.nextNode = n3
+s1 = SingleyLinkedList()
 
-print(n1)
+pdb.set_trace()
