@@ -16,12 +16,15 @@ def reverse(head):
     nextnode = None
 
     while current:
-
+        # First set nextnode to the next_node of current
         nextnode = current.next_node
+        # the the current nodes next node to equal previous
         current.next_node = previous
-
+        # set previous to equal current
         previous = current
+        # set current to equal nextnode
         current = nextnode
+
     return previous
 
 
