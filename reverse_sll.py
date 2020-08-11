@@ -28,6 +28,6 @@ l3 = LinkedListNode(value=3)
 l1.next = l2
 l2.next = l3
 
-print(reverse_in_place(l1).value)
+print(reverse_in_place(l1))
 
 # pdb.set_trace()
