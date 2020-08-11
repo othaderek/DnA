@@ -1,5 +1,5 @@
 def binarySearch(array, target):
-	return binarySearch(array, target, 0, len(array)-1)
+	return binarySearchHelper(array,target,0,len(array)-1)
 
 def binarySearchHelper(array, target, left, right):
 	if left > right:
@@ -7,6 +7,7 @@ def binarySearchHelper(array, target, left, right):
 
 	middle = (left+right)//2
 	potentialMatch = array[middle]
+
 	if potentialMatch == target:
 		return middle
 	elif potentialMatch < target:
