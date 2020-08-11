@@ -1,30 +1,14 @@
-import pdb
-import sys
-import faulthandler
-
-sys.setrecursionlimit(10**6)
-faulthandler.enable()
-
-# Node class
-# value
-# prev
-# next
 class Node:
     def __init__(self, value, prev=None, next=None):
         self.value = value
         self.prev = prev
         self.next = next
-    # def __repr__(self):
-    #     return f"Node: value: {self.value}, prev: {self.prev}, next: {self.next}"
 
 class DoublyLinkedList:
     def __init__(self, head=None, tail=None, size=0):
         self.head = head
         self.tail = tail
         self.size = size
-
-    # def __repr__(self):
-    #     return f"Doubly Linked List: head: {self.head}, tail: {self.tail}, size: {self.size}"
 
     def search(self, node):
         if self.head == None:
@@ -106,17 +90,21 @@ class DoublyLinkedList:
         pass
 
 d1 = DoublyLinkedList()
-# Doubly Linked List Class
-# head
-# tail
-# size
-# *methods*
-# insert at head
-# insert at tail
-# insert before given node
-# insert after given node
-# delete given node
-# access
-# reverse
+d1.insert_at_tail(1)
+d1.insert_at_tail(2)
+d1.insert_at_tail(3)
+d1.insert_at_tail(5)
+d1.insert_at_tail(8)
 
+
+d2 = DoublyLinkedList()
+
+d2.insert_at_tail(1)
+d2.insert_at_tail(3)
+d2.insert_at_tail(3)
+d2.insert_at_tail(7)
+d2.insert_at_tail(10)
+
+def merge(d1,d2):
+    
 pdb.set_trace()
