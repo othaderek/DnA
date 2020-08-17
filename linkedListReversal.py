@@ -1,49 +1,83 @@
-import pdb
-
 class Node:
-
-    def __init__(self, next=None, value=0):
+    def __init__(self, value=0, next=None):
         self.value = value
         self.next = next
-
+        
+    
 class LinkedList:
-    def __init__(self, head=None, tail=None, size=0):
+    def __init__(self, head=None, size=0):
         self.head = head
         self.size = size
+    
+    def push(self, new_node):
+        node = Node(value=new_node)
+        temp = self.head
+        node.next = temp
+        self.head = node
+        self.size += 1
         
-    def push(self, new_data): 
-        # create a new node
-        new_node = Node(value=new_data) 
-        # set the new nodes value to being the current head
-        new_node.next = self.head 
-        # set the head to be the new node
-        self.head = new_node 
-        
-    def print_list(self): 
-        temp = self.head 
-        while temp: 
-            print(temp.value) 
-            temp = temp.next
-
-    def reverse(self):
-        prev = None
+    def print_list(self):
         current_node = self.head
-
+        while current_node:
+            print(current_node.value)
+            current_node = current_node.next
+            
+    def search(self, target_value):
+        current_node = self.head
+        
+        while current_node:
+            if current_node.value == target_value:
+                return current_node
+            current_node = current_node.next
+        return False
+    
+    def reverse(self):
+        current_node = self.head
+        previous = None
+        
         while current_node:
             temp = current_node.next
-            current_node.next = prev
-            prev = current_node
+            current_node.next = previous
+            previous = current_node
             current_node = temp
         
-        # IMPORTANT: SET HEAD TO PREVIOUS AT END OF LOOP 
-        self.head = prev
-
-l1 = LinkedList()
-l1.push(3)
-l1.push(2)
-l1.push(1)
-l1.print_list()
-
-pdb.set_trace()
-
+        self.head = previous
+    def nth_to_the_last(self, n):
+        
+        if n == 0:
+            return False
+        
+        if n > self.size:
+            return False
+        
+        current_node = self.head
+        counter = 0
+        
+        while current_node:
+            counter += 1
+            current_node = current_node.next
+        
+        k = counter-n
+        
+        if k is 0:
+            self.head = self.head.next
+            self.si
+            return self.print_list()
+            
+        previous = None
+        current_node = self.head
+        while k is not 0:
+            k -= 1
+            previous = current_node
+            current_node = current_node.next
+        
+        previous.next = current_node.next
+        sefl.size -= 1
+        return self.print_list()
+            
+    #push
+    #print list
+    #search
+    #reverse
+    #remove nth to the last
             
